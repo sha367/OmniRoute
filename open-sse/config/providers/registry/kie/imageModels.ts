@@ -6,7 +6,7 @@
  *
  * 200 endpoints behind KIE's 98 market cards
  * (image: 54, video: 69, chat: 52, audio: 5, music: 20); this file carries the
- * image ones. `requiredInput` holds fields the gateway fills in itself,
+ * image-generation ones. `requiredInput` holds fields the gateway fills in itself,
  * `callerRequired` the ones only the caller can provide.
  */
 
@@ -71,14 +71,14 @@ export const KIE_IMAGE_MODELS: KieImageModelEntry[] = [
   { id: "gpt-image-2-text-to-image", name: "Gpt Image 2 T2I", isMarket: true },
   {
     id: "gpt-image/1.5-image-to-image",
-    name: "Gpt Image 1 5 I2I",
+    name: "Gpt Image 1.5 I2I",
     isMarket: true,
     requiredInput: { quality: "basic" },
     callerRequired: ["input_urls"],
   },
   {
     id: "gpt-image/1.5-text-to-image",
-    name: "Gpt Image 1 5 T2I",
+    name: "Gpt Image 1.5 T2I",
     isMarket: true,
     requiredInput: { quality: "basic" },
   },
@@ -156,14 +156,14 @@ export const KIE_IMAGE_MODELS: KieImageModelEntry[] = [
   },
   {
     id: "seedream/4.5-edit",
-    name: "Seedream 4 5 Edit",
+    name: "Seedream 4.5 Edit",
     isMarket: true,
     requiredInput: { quality: "basic" },
     callerRequired: ["image_urls"],
   },
   {
     id: "seedream/4.5-text-to-image",
-    name: "Seedream 4 5 T2I",
+    name: "Seedream 4.5 T2I",
     isMarket: true,
     requiredInput: { quality: "basic" },
   },

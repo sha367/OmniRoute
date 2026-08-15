@@ -6,6 +6,7 @@
  */
 
 import { parseModelFromRegistry, getAllModelsFromRegistry } from "./registryUtils.ts";
+import { KIE_MUSIC_MODELS } from "./providers/registry/kie/musicModels.ts";
 
 interface MusicModel {
   id: string;
@@ -49,10 +50,7 @@ export const MUSIC_PROVIDERS: Record<string, MusicProvider> = {
     authType: "apikey",
     authHeader: "bearer",
     format: "kie-music",
-    models: [
-      { id: "suno-v4.0", name: "Suno V4.0" },
-      { id: "suno-v3.5", name: "Suno V3.5" },
-    ],
+    models: KIE_MUSIC_MODELS,
   },
 
   suno: {

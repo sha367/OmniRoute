@@ -54,15 +54,19 @@ const CALLER_SUPPLIED = new Set([
 
 /** "flux-2/pro-text-to-image" → "Flux 2 Pro Text To Image" */
 function displayName(id) {
-  return id
-    .split(/[/\-_. ]/)
-    .filter(Boolean)
-    .map((w) => (/^\d/.test(w) ? w : w[0].toUpperCase() + w.slice(1)))
-    .join(" ")
-    .replace(/\bText To Image\b/, "T2I")
-    .replace(/\bImage To Image\b/, "I2I")
-    .replace(/\bText To Video\b/, "T2V")
-    .replace(/\bImage To Video\b/, "I2V");
+  return (
+    id
+      // Split on separators, but keep a dot that sits between digits: "1.5" is a
+      // version, "flux-2/pro" is two words.
+      .split(/[/\-_ ]|\.(?!\d)|(?<!\d)\./)
+      .filter(Boolean)
+      .map((w) => (/^\d/.test(w) ? w : w[0].toUpperCase() + w.slice(1)))
+      .join(" ")
+      .replace(/\bText To Image\b/, "T2I")
+      .replace(/\bImage To Image\b/, "I2I")
+      .replace(/\bText To Video\b/, "T2V")
+      .replace(/\bImage To Video\b/, "I2V")
+  );
 }
 
 function literal(value) {
@@ -89,16 +93,57 @@ function entryLine(m) {
 
 const raw = JSON.parse(readFileSync(CATALOG, "utf8"));
 const catalog = raw.endpoints;
-const images = catalog
-  .filter((m) => m.modality === "image")
-  .sort((a, b) => a.id.localeCompare(b.id));
 const counts = catalog.reduce(
   (acc, m) => ({ ...acc, [m.modality]: (acc[m.modality] || 0) + 1 }),
   {}
 );
 
-const banner = `/**
- * KIE image-generation model catalog — GENERATED, do not edit by hand.
+const byModality = (m) =>
+  catalog.filter((e) => e.modality === m).sort((a, b) => a.id.localeCompare(b.id));
+
+/**
+ * KIE serves synthesis and transcription through one `kie-audio` format, but
+ * the registry splits them across AUDIO_SPEECH_PROVIDERS and
+ * AUDIO_TRANSCRIPTION_PROVIDERS, so the audio slice is split the same way.
+ */
+const TRANSCRIPTION = /speech-to-text|audio-isolation|transcri/i;
+const audio = byModality("audio");
+
+const SLICES = [
+  {
+    file: "imageModels.ts",
+    symbol: "KIE_IMAGE_MODELS",
+    label: "image-generation",
+    rows: byModality("image"),
+  },
+  {
+    file: "videoModels.ts",
+    symbol: "KIE_VIDEO_MODELS",
+    label: "video-generation",
+    rows: byModality("video"),
+  },
+  {
+    file: "musicModels.ts",
+    symbol: "KIE_MUSIC_MODELS",
+    label: "music-generation",
+    rows: byModality("music"),
+  },
+  { file: "chatModels.ts", symbol: "KIE_CHAT_MODELS", label: "chat", rows: byModality("chat") },
+  {
+    file: "audioModels.ts",
+    symbol: "KIE_SPEECH_MODELS",
+    label: "speech-synthesis",
+    rows: audio.filter((m) => !TRANSCRIPTION.test(m.id)),
+    extra: {
+      symbol: "KIE_TRANSCRIPTION_MODELS",
+      rows: audio.filter((m) => TRANSCRIPTION.test(m.id)),
+    },
+  },
+];
+
+function render({ symbol, label, rows, extra }) {
+  const head = `/**
+ * KIE ${label} model catalog — GENERATED, do not edit by hand.
  *
  * Source: open-sse/config/providers/registry/kie/catalog.json
  * Regenerate: node scripts/kie/generate-kie-registry.mjs
@@ -107,11 +152,11 @@ const banner = `/**
  * (${Object.entries(counts)
    .map(([k, v]) => `${k}: ${v}`)
    .join(", ")}); this file carries the
- * image ones. \`requiredInput\` holds fields the gateway fills in itself,
+ * ${label} ones. \`requiredInput\` holds fields the gateway fills in itself,
  * \`callerRequired\` the ones only the caller can provide.
  */
 
-export interface KieImageModelEntry {
+export interface KieModelEntry {
   id: string;
   name: string;
   isMarket?: boolean;
@@ -121,20 +166,50 @@ export interface KieImageModelEntry {
   callerRequired?: string[];
 }
 
-export const KIE_IMAGE_MODELS: KieImageModelEntry[] = [
-${images.map(entryLine).join("\n")}
+export const ${symbol}: KieModelEntry[] = [
+${rows.map(entryLine).join("\n")}
 ];
 `;
+  if (!extra) return head;
+  return `${head}
+export const ${extra.symbol}: KieModelEntry[] = [
+${extra.rows.map(entryLine).join("\n")}
+];
+`;
+}
 
-const target = join(REGISTRY, "imageModels.ts");
+let stale = false;
+for (const slice of SLICES) {
+  // imageModels.ts predates the split and still exports the image-specific
+  // interface name imageRegistry.ts imports; keep that alias.
+  const body =
+    slice.file === "imageModels.ts"
+      ? render(slice).replace(/KieModelEntry/g, "KieImageModelEntry")
+      : render(slice);
+  const target = join(REGISTRY, slice.file);
+  if (CHECK) {
+    let current = "";
+    try {
+      current = readFileSync(target, "utf8");
+    } catch {
+      current = "";
+    }
+    if (current !== body) {
+      console.error(`stale: ${slice.file}`);
+      stale = true;
+    }
+  } else {
+    writeFileSync(target, body);
+    console.log(
+      `wrote ${slice.file} — ${slice.rows.length + (slice.extra?.rows.length ?? 0)} endpoints`
+    );
+  }
+}
+
 if (CHECK) {
-  const current = readFileSync(target, "utf8");
-  if (current !== banner) {
-    console.error("kie registry is stale — run: node scripts/kie/generate-kie-registry.mjs");
+  if (stale) {
+    console.error("run: node scripts/kie/generate-kie-registry.mjs");
     process.exit(1);
   }
-  console.log(`kie registry up to date (${images.length} image endpoints)`);
-} else {
-  writeFileSync(target, banner);
-  console.log(`wrote ${target} — ${images.length} image endpoints of ${catalog.length} total`);
+  console.log(`kie registry up to date (${catalog.length} endpoints)`);
 }
