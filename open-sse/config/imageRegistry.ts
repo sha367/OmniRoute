@@ -28,6 +28,13 @@ interface ImageModelEntry {
   isMarket?: boolean;
   supportedSizes?: string[];
   mediaCapabilities?: Record<string, unknown>;
+  // Provider-required `input` fields the gateway can fill in itself (KIE's
+  // Seedream needs `quality`, Flux 2 needs `resolution`). Merged as defaults;
+  // a caller-supplied value wins. See registry/kie/imageModels.ts.
+  requiredInput?: Record<string, unknown>;
+  // Provider-required fields only the caller can supply (source images,
+  // upscale factors). Missing ones are refused locally instead of upstream.
+  callerRequired?: string[];
 }
 
 interface ImageProviderConfig {

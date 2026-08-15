@@ -1,0 +1,1208 @@
+{
+  "_comment": "Scraped from kie.ai/sitemaps/models-0.xml (market cards) and each card page (API ids). Regenerate the registry with scripts/kie/generate-kie-registry.mjs.",
+  "scrapedAt": "2026-08-15",
+  "marketCards": 98,
+  "cardsWithoutEndpoints": ["flux-3", "kimi-k3", "wan-3-0"],
+  "endpoints": [
+    {
+      "id": "4o-image-api",
+      "card": "4o-image-api",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "bytedance/v1-lite-image-to-video",
+      "card": "bytedance/seedance-v1",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "bytedance/v1-lite-text-to-video",
+      "card": "bytedance/seedance-v1",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "bytedance/v1-pro-fast-image-to-video",
+      "card": "bytedance/seedance-v1",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "bytedance/v1-pro-image-to-video",
+      "card": "bytedance/seedance-v1",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "bytedance/v1-pro-text-to-video",
+      "card": "bytedance/seedance-v1",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "claude-fable-5",
+      "card": "claude-fable-5",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "card": "claude-haiku-4-5",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-opus-4-5",
+      "card": "claude-opus-4-5",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-opus-4-6",
+      "card": "claude-opus-4-6",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-opus-4-7",
+      "card": "claude-opus-4-7",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-opus-4-8",
+      "card": "claude-opus-4-8",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-opus-5",
+      "card": "claude-opus-5",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-sonnet-4-5",
+      "card": "claude-sonnet-4-5",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "card": "claude-sonnet-4-6",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "claude-sonnet-5",
+      "card": "claude-sonnet-5",
+      "modality": "chat",
+      "required": ["role", "content"]
+    },
+    {
+      "id": "gpt-5-codex",
+      "card": "codex",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5.1-codex",
+      "card": "codex",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5.2-codex",
+      "card": "codex",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5.3-codex",
+      "card": "codex",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5.4-codex",
+      "card": "codex",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "elevenlabs/text-to-speech-multilingual-v2",
+      "card": "elevenlabs-tts",
+      "modality": "audio",
+      "required": ["text", "voice"]
+    },
+    {
+      "id": "elevenlabs/text-to-speech-turbo-2-5",
+      "card": "elevenlabs-tts",
+      "modality": "audio",
+      "required": ["text"]
+    },
+    {
+      "id": "elevenlabs/text-to-dialogue-v3",
+      "card": "elevenlabs/text-to-dialogue-v3",
+      "modality": "audio",
+      "required": []
+    },
+    {
+      "id": "v3-api",
+      "card": "features/v3-api",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "veo/extend",
+      "card": "features/v3-api",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "veo/get-1080p-video",
+      "card": "features/v3-api",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "veo/get-4k-video",
+      "card": "features/v3-api",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "flux-2/flex-image-to-image",
+      "card": "flux-2",
+      "modality": "image",
+      "required": ["input_urls", "aspect_ratio", "resolution"]
+    },
+    {
+      "id": "flux-2/flex-text-to-image",
+      "card": "flux-2",
+      "modality": "image",
+      "required": ["aspect_ratio", "resolution"]
+    },
+    {
+      "id": "flux-2/pro-image-to-image",
+      "card": "flux-2",
+      "modality": "image",
+      "required": ["input_urls", "aspect_ratio", "resolution"]
+    },
+    {
+      "id": "flux-2/pro-text-to-image",
+      "card": "flux-2",
+      "modality": "image",
+      "required": ["aspect_ratio", "resolution"]
+    },
+    {
+      "id": "flux1-kontext",
+      "card": "flux-kontext-api",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "gemini-2.5-flash",
+      "card": "gemini-2.5-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-2.5-pro",
+      "card": "gemini-2.5-pro",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "google/gemini-2-5-pro-tts",
+      "card": "gemini-2.5-pro-preview-tts",
+      "modality": "audio",
+      "required": []
+    },
+    {
+      "id": "gemini-3.1-pro",
+      "card": "gemini-3-1-pro",
+      "modality": "chat",
+      "required": ["messages"]
+    },
+    {
+      "id": "gemini-3-5-flash",
+      "card": "gemini-3-5-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-5-flash-openai",
+      "card": "gemini-3-5-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-6-flash",
+      "card": "gemini-3-6-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-6-flash-openai",
+      "card": "gemini-3-6-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-7-flash",
+      "card": "gemini-3-7-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-7-flash-openai",
+      "card": "gemini-3-7-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-flash",
+      "card": "gemini-3-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-flash-v1betamodels",
+      "card": "gemini-3-flash",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-3-pro",
+      "card": "gemini-3-pro",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "google/gemini-3-1-flash-tts",
+      "card": "gemini-3.1-flash-tts",
+      "modality": "audio",
+      "required": []
+    },
+    {
+      "id": "gemini-omni-audio",
+      "card": "gemini-omni",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-omni-character",
+      "card": "gemini-omni",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gemini-omni-video",
+      "card": "gemini-omni",
+      "modality": "video",
+      "required": ["duration"]
+    },
+    {
+      "id": "google/imagen4",
+      "card": "google/imagen4",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "google/imagen4-fast",
+      "card": "google/imagen4",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "google/imagen4-ultra",
+      "card": "google/imagen4",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "gpt-5-2",
+      "card": "gpt-5-2",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5-4",
+      "card": "gpt-5-4",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5-5",
+      "card": "gpt-5-5",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5-6-luna",
+      "card": "gpt-5-6",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "card": "gpt-5-6",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-5-6-terra",
+      "card": "gpt-5-6",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "gpt-image/1.5-image-to-image",
+      "card": "gpt-image-1.5",
+      "modality": "image",
+      "required": ["input_urls", "aspect_ratio", "quality"]
+    },
+    {
+      "id": "gpt-image/1.5-text-to-image",
+      "card": "gpt-image-1.5",
+      "modality": "image",
+      "required": ["aspect_ratio", "quality"]
+    },
+    {
+      "id": "gpt-image-2-image-to-image",
+      "card": "gpt-image-2",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "gpt-image-2-text-to-image",
+      "card": "gpt-image-2",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "grok-4-3",
+      "card": "grok-4-3",
+      "modality": "chat",
+      "required": ["test"]
+    },
+    {
+      "id": "grok-4-5",
+      "card": "grok-4-5",
+      "modality": "chat",
+      "required": ["test"]
+    },
+    {
+      "id": "grok-4-6",
+      "card": "grok-4-6",
+      "modality": "chat",
+      "required": ["test"]
+    },
+    {
+      "id": "grok-imagine/extend",
+      "card": "grok-imagine",
+      "modality": "chat",
+      "required": ["task_id", "extend_at", "extend_times"]
+    },
+    {
+      "id": "grok-imagine/image-to-image",
+      "card": "grok-imagine",
+      "modality": "image",
+      "required": ["image_urls"]
+    },
+    {
+      "id": "grok-imagine/image-to-video",
+      "card": "grok-imagine",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "grok-imagine/text-to-image",
+      "card": "grok-imagine",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "grok-imagine/text-to-video",
+      "card": "grok-imagine",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "grok-imagine/upscale",
+      "card": "grok-imagine",
+      "modality": "chat",
+      "required": ["task_id"]
+    },
+    {
+      "id": "grok-imagine-image-2-0/image-edit",
+      "card": "grok-imagine-image-2",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "grok-imagine-image-2-0/segment-map",
+      "card": "grok-imagine-image-2",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "grok-imagine-image-2-0/text-to-image",
+      "card": "grok-imagine-image-2",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "grok-imagine-video-1-5-preview",
+      "card": "grok-imagine-video-1.5",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "hailuo/2-3-image-to-video-pro",
+      "card": "hailuo-2-3",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "hailuo/2-3-image-to-video-standard",
+      "card": "hailuo-2-3",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "hailuo/02-image-to-video-pro",
+      "card": "hailuo-api",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "hailuo/02-image-to-video-standard",
+      "card": "hailuo-api",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "hailuo/02-text-to-video-pro",
+      "card": "hailuo-api",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "hailuo/02-text-to-video-standard",
+      "card": "hailuo-api",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "happyhorse/image-to-video",
+      "card": "happyhorse-1-0",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "happyhorse/reference-to-video",
+      "card": "happyhorse-1-0",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "happyhorse/text-to-video",
+      "card": "happyhorse-1-0",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "happyhorse/video-edit",
+      "card": "happyhorse-1-0",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "happyhorse-1-1/image-to-video",
+      "card": "happyhorse-1-1",
+      "modality": "video",
+      "required": ["image_urls"]
+    },
+    {
+      "id": "happyhorse-1-1/reference-to-video",
+      "card": "happyhorse-1-1",
+      "modality": "video",
+      "required": ["reference_image"]
+    },
+    {
+      "id": "happyhorse-1-1/text-to-video",
+      "card": "happyhorse-1-1",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "ideogram/character",
+      "card": "ideogram/character",
+      "modality": "image",
+      "required": ["reference_image_urls"]
+    },
+    {
+      "id": "ideogram/character-edit",
+      "card": "ideogram/character",
+      "modality": "image",
+      "required": ["image_url", "mask_url", "reference_image_urls"]
+    },
+    {
+      "id": "ideogram/character-remix",
+      "card": "ideogram/character",
+      "modality": "image",
+      "required": ["image_url", "reference_image_urls"]
+    },
+    {
+      "id": "ideogram/v3-edit",
+      "card": "ideogram/v3",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "ideogram/v3-remix",
+      "card": "ideogram/v3",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "ideogram/v3-text-to-image",
+      "card": "ideogram/v3",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "infinitalk/from-audio",
+      "card": "infinitalk",
+      "modality": "chat",
+      "required": ["image_url", "audio_url"]
+    },
+    {
+      "id": "kling/v2-5-turbo-image-to-video-pro",
+      "card": "kling-2-5",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "kling/v2-5-turbo-text-to-video-pro",
+      "card": "kling-2-5",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "kling-2.6/image-to-video",
+      "card": "kling-2-6",
+      "modality": "video",
+      "required": ["image_urls", "sound", "duration"]
+    },
+    {
+      "id": "kling-2.6/text-to-video",
+      "card": "kling-2-6",
+      "modality": "video",
+      "required": ["sound", "aspect_ratio", "duration"]
+    },
+    {
+      "id": "kling-2.6/motion-control",
+      "card": "kling-2.6-motion-control",
+      "modality": "video",
+      "required": ["input_urls", "video_urls", "character_orientation", "mode"]
+    },
+    {
+      "id": "kling-3.0/video",
+      "card": "kling-3-0",
+      "modality": "video",
+      "required": ["duration"]
+    },
+    {
+      "id": "kling/v3-turbo-image-to-video",
+      "card": "kling-3-0-turbo",
+      "modality": "video",
+      "required": ["image_urls", "duration", "resolution"]
+    },
+    {
+      "id": "kling/v3-turbo-text-to-video",
+      "card": "kling-3-0-turbo",
+      "modality": "video",
+      "required": ["duration", "aspect_ratio", "resolution"]
+    },
+    {
+      "id": "kling-3.0/motion-control",
+      "card": "kling-3-motion-control",
+      "modality": "video",
+      "required": ["input_urls", "video_urls"]
+    },
+    {
+      "id": "kling/ai-avatar-pro",
+      "card": "kling-ai-avatar",
+      "modality": "video",
+      "required": ["image_url", "audio_url"]
+    },
+    {
+      "id": "kling/ai-avatar-standard",
+      "card": "kling-ai-avatar",
+      "modality": "video",
+      "required": ["image_url", "audio_url"]
+    },
+    {
+      "id": "kling-3.0-omni/image-to-video",
+      "card": "kling-o3",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "kling-3.0-omni/reference-to-video",
+      "card": "kling-o3",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "kling-3.0-omni/text-to-video",
+      "card": "kling-o3",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "kling-3.0-omni/transformation",
+      "card": "kling-o3",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "kling/v2-1-master-image-to-video",
+      "card": "kling/v2-1",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "kling/v2-1-master-text-to-video",
+      "card": "kling/v2-1",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "kling/v2-1-pro",
+      "card": "kling/v2-1",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "kling/v2-1-standard",
+      "card": "kling/v2-1",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "minimax-h3/image-to-video",
+      "card": "minimax-h3",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "minimax-h3/reference-to-video",
+      "card": "minimax-h3",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "minimax-h3/text-to-video",
+      "card": "minimax-h3",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "google/nano-banana",
+      "card": "nano-banana",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "google/nano-banana-edit",
+      "card": "nano-banana",
+      "modality": "image",
+      "required": ["image_urls"]
+    },
+    {
+      "id": "nano-banana-pro",
+      "card": "nano-banana",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "nano-banana-2",
+      "card": "nano-banana-2",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "nano-banana-2-lite",
+      "card": "nano-banana-2-lite",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "omnihuman-1-5",
+      "card": "omnihuman-1-5",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "omnihuman-1-5/human-identification",
+      "card": "omnihuman-1-5",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "omnihuman-1-5/subject-detection",
+      "card": "omnihuman-1-5",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "pixverse-v6/extend",
+      "card": "pixverse-v6",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "pixverse-v6/image-to-video",
+      "card": "pixverse-v6",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "pixverse-v6/reference-to-video",
+      "card": "pixverse-v6",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "pixverse-v6/text-to-video",
+      "card": "pixverse-v6",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "pixverse-v6/transition",
+      "card": "pixverse-v6",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "qwen/image-to-image",
+      "card": "qwen-image",
+      "modality": "image",
+      "required": ["image_url"]
+    },
+    {
+      "id": "qwen/text-to-image",
+      "card": "qwen-image",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "qwen2/image-edit",
+      "card": "qwen-image-2",
+      "modality": "image",
+      "required": ["image_url"]
+    },
+    {
+      "id": "qwen2/text-to-image",
+      "card": "qwen-image-2",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "qwen3/image-to-image",
+      "card": "qwen-image-3",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "qwen3/pro-image-to-image",
+      "card": "qwen-image-3",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "qwen3/pro-text-to-image",
+      "card": "qwen-image-3",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "qwen3/text-to-image",
+      "card": "qwen-image-3",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "qwen/image-edit",
+      "card": "qwen/image-edit",
+      "modality": "image",
+      "required": ["image_url"]
+    },
+    {
+      "id": "recraft/crisp-upscale",
+      "card": "recraft-crisp-upscale",
+      "modality": "image",
+      "required": ["image"]
+    },
+    {
+      "id": "recraft/remove-background",
+      "card": "recraft-remove-background",
+      "modality": "image",
+      "required": ["image"]
+    },
+    {
+      "id": "runway",
+      "card": "runway-api",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "runway/extend-ai-video",
+      "card": "runway-api",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "bytedance/seedance-1.5-pro",
+      "card": "seedance-1-5-pro",
+      "modality": "video",
+      "required": ["aspect_ratio", "duration"]
+    },
+    {
+      "id": "bytedance/seedance-2",
+      "card": "seedance-2-0",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "bytedance/seedance-2-fast",
+      "card": "seedance-2-0",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "bytedance/seedance-2-mini",
+      "card": "seedance-2-0-mini",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "bytedance/seedance-2-5",
+      "card": "seedance-2-5",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "bytedance/seedream",
+      "card": "seedream",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "seedream/4.5-edit",
+      "card": "seedream-4-5",
+      "modality": "image",
+      "required": ["image_urls", "aspect_ratio", "quality"]
+    },
+    {
+      "id": "seedream/4.5-text-to-image",
+      "card": "seedream-4-5",
+      "modality": "image",
+      "required": ["aspect_ratio", "quality"]
+    },
+    {
+      "id": "seedream/5-pro-image-to-image",
+      "card": "seedream-5-0-pro",
+      "modality": "image",
+      "required": ["image_urls", "aspect_ratio", "quality"]
+    },
+    {
+      "id": "seedream/5-pro-layer-decomposition",
+      "card": "seedream-5-0-pro",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "seedream/5-pro-text-to-image",
+      "card": "seedream-5-0-pro",
+      "modality": "image",
+      "required": ["aspect_ratio", "quality"]
+    },
+    {
+      "id": "bytedance/seedream-v4-edit",
+      "card": "seedream-api",
+      "modality": "image",
+      "required": ["image_urls"]
+    },
+    {
+      "id": "bytedance/seedream-v4-text-to-image",
+      "card": "seedream-api",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "seedream/5-lite-image-to-image",
+      "card": "seedream5-0-lite",
+      "modality": "image",
+      "required": ["image_urls", "aspect_ratio", "quality"]
+    },
+    {
+      "id": "seedream/5-lite-text-to-image",
+      "card": "seedream5-0-lite",
+      "modality": "image",
+      "required": ["aspect_ratio", "quality"]
+    },
+    {
+      "id": "ai-music-api/add-instrumental",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/add-vocals",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/boost-music-style",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/check-voice",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/convert-to-wav-format",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/cover-generate",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/create-music-video",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/extend",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/generate",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/generate-lyrics",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/generate-midi-from-audio",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/generate-persona",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/generate-voice",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/mashup",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/replace-section",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/separate-vocals",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/sounds",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/timeStamped-lyrics",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/upload-and-cover-audio",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "ai-music-api/upload-and-extend-audio",
+      "card": "suno-api",
+      "modality": "music",
+      "required": []
+    },
+    {
+      "id": "topaz/image-upscale",
+      "card": "topaz-image-upscale",
+      "modality": "image",
+      "required": ["image_url", "upscale_factor"]
+    },
+    {
+      "id": "topaz/video-upscale",
+      "card": "topaz-video-upscaler",
+      "modality": "video",
+      "required": ["video_url"]
+    },
+    {
+      "id": "veo-3-1",
+      "card": "veo-3-1",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "volcengine/video-to-video-lip-sync",
+      "card": "volcengine-video-to-video-lip-sync",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "wan/2-5-image-to-video",
+      "card": "wan-2-5",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "wan/2-5-text-to-video",
+      "card": "wan-2-5",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "wan/2-6-image-to-video",
+      "card": "wan-2-6",
+      "modality": "video",
+      "required": ["image_urls"]
+    },
+    {
+      "id": "wan/2-6-text-to-video",
+      "card": "wan-2-6",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "wan/2-6-video-to-video",
+      "card": "wan-2-6",
+      "modality": "video",
+      "required": ["video_urls"]
+    },
+    {
+      "id": "wan/2-7-image",
+      "card": "wan-2-7-image",
+      "modality": "image",
+      "required": []
+    },
+    {
+      "id": "wan/2-7-image-pro",
+      "card": "wan-2-7-image",
+      "modality": "image",
+      "required": ["hex", "ratio"]
+    },
+    {
+      "id": "wan/2-7-image-to-video",
+      "card": "wan-2-7-video",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "wan/2-7-r2v",
+      "card": "wan-2-7-video",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "wan/2-7-text-to-video",
+      "card": "wan-2-7-video",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "wan/2-7-videoedit",
+      "card": "wan-2-7-video",
+      "modality": "chat",
+      "required": []
+    },
+    {
+      "id": "wan/2-2-animate-move",
+      "card": "wan-animate",
+      "modality": "chat",
+      "required": ["video_url", "image_url"]
+    },
+    {
+      "id": "wan/2-2-animate-replace",
+      "card": "wan-animate",
+      "modality": "chat",
+      "required": ["video_url", "image_url"]
+    },
+    {
+      "id": "wan/2-2-a14b-speech-to-video-turbo",
+      "card": "wan-speech-to-video-turbo",
+      "modality": "video",
+      "required": ["image_url", "audio_url"]
+    },
+    {
+      "id": "wan/2-2-a14b-image-to-video-turbo",
+      "card": "wan/v2-2",
+      "modality": "video",
+      "required": ["image_url"]
+    },
+    {
+      "id": "wan/2-2-a14b-text-to-video-turbo",
+      "card": "wan/v2-2",
+      "modality": "video",
+      "required": []
+    },
+    {
+      "id": "z-image",
+      "card": "z-image",
+      "modality": "image",
+      "required": ["aspect_ratio"]
+    }
+  ]
+}

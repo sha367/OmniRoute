@@ -735,6 +735,36 @@ async function handleKieImageGeneration({
     if (imageUrl) {
       input.image_url = imageUrl;
     }
+
+    // Most market models gate on more than prompt+aspect_ratio: Seedream wants
+    // `quality`, Flux 2 wants `resolution`. Sending neither earns
+    // `500 <field> is required` from KIE, which reads like an outage rather
+    // than a missing parameter. The registry carries the defaults (generated
+    // from each model's own docs page); a caller-supplied value always wins.
+    for (const [field, value] of Object.entries(modelEntry?.requiredInput ?? {})) {
+      if (input[field] === undefined) input[field] = value;
+    }
+
+    // Fields only the caller can provide — refuse locally rather than paying
+    // for a round trip KIE will reject.
+    const missing = (modelEntry?.callerRequired ?? []).filter(
+      (field) => input[field] === undefined && body[field] === undefined
+    );
+    if (missing.length > 0) {
+      return saveImageErrorResult({
+        provider,
+        model,
+        status: 400,
+        startTime,
+        error: `${model} requires ${missing.join(", ")}`,
+      });
+    }
+    for (const field of modelEntry?.callerRequired ?? []) {
+      if (input[field] === undefined && body[field] !== undefined) {
+        input[field] = body[field];
+      }
+    }
+
     payload = {
       model,
       input,
