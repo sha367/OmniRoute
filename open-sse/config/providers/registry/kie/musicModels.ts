@@ -4,8 +4,8 @@
  * Source: open-sse/config/providers/registry/kie/catalog.json
  * Regenerate: node scripts/kie/generate-kie-registry.mjs
  *
- * 200 endpoints behind KIE's 98 market cards
- * (image: 54, video: 69, chat: 52, audio: 5, music: 20); this file carries the
+ * 198 endpoints behind KIE's 98 market cards
+ * (image: 55, video: 80, chat: 38, audio: 5, music: 20); this file carries the
  * music-generation ones. `requiredInput` holds fields the gateway fills in itself,
  * `callerRequired` the ones only the caller can provide.
  */

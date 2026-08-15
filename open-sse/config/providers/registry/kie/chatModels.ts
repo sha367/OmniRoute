@@ -4,8 +4,8 @@
  * Source: open-sse/config/providers/registry/kie/catalog.json
  * Regenerate: node scripts/kie/generate-kie-registry.mjs
  *
- * 200 endpoints behind KIE's 98 market cards
- * (image: 54, video: 69, chat: 52, audio: 5, music: 20); this file carries the
+ * 198 endpoints behind KIE's 98 market cards
+ * (image: 55, video: 80, chat: 38, audio: 5, music: 20); this file carries the
  * chat ones. `requiredInput` holds fields the gateway fills in itself,
  * `callerRequired` the ones only the caller can provide.
  */
@@ -59,51 +59,4 @@ export const KIE_CHAT_MODELS: KieModelEntry[] = [
   { id: "grok-4-3", name: "Grok 4 3", isMarket: true },
   { id: "grok-4-5", name: "Grok 4 5", isMarket: true },
   { id: "grok-4-6", name: "Grok 4 6", isMarket: true },
-  {
-    id: "grok-imagine/extend",
-    name: "Grok Imagine Extend",
-    isMarket: true,
-    callerRequired: ["task_id"],
-  },
-  {
-    id: "grok-imagine/upscale",
-    name: "Grok Imagine Upscale",
-    isMarket: true,
-    callerRequired: ["task_id"],
-  },
-  {
-    id: "infinitalk/from-audio",
-    name: "Infinitalk From Audio",
-    isMarket: true,
-    callerRequired: ["image_url", "audio_url"],
-  },
-  { id: "omnihuman-1-5", name: "Omnihuman 1 5", isMarket: true },
-  {
-    id: "omnihuman-1-5/human-identification",
-    name: "Omnihuman 1 5 Human Identification",
-    isMarket: true,
-  },
-  {
-    id: "omnihuman-1-5/subject-detection",
-    name: "Omnihuman 1 5 Subject Detection",
-    isMarket: true,
-  },
-  { id: "pixverse-v6/extend", name: "Pixverse V6 Extend", isMarket: true },
-  { id: "pixverse-v6/transition", name: "Pixverse V6 Transition", isMarket: true },
-  { id: "runway", name: "Runway", isMarket: true },
-  { id: "v3-api", name: "V3 Api", isMarket: true },
-  {
-    id: "wan/2-2-animate-move",
-    name: "Wan 2 2 Animate Move",
-    isMarket: true,
-    callerRequired: ["video_url", "image_url"],
-  },
-  {
-    id: "wan/2-2-animate-replace",
-    name: "Wan 2 2 Animate Replace",
-    isMarket: true,
-    callerRequired: ["video_url", "image_url"],
-  },
-  { id: "wan/2-7-r2v", name: "Wan 2 7 R2v", isMarket: true },
-  { id: "wan/2-7-videoedit", name: "Wan 2 7 Videoedit", isMarket: true },
 ];

@@ -3,6 +3,7 @@
   "scrapedAt": "2026-08-15",
   "marketCards": 98,
   "cardsWithoutEndpoints": ["flux-3", "kimi-k3", "wan-3-0"],
+  "droppedNonEndpoints": ["runway", "v3-api"],
   "endpoints": [
     {
       "id": "4o-image-api",
@@ -146,12 +147,6 @@
       "id": "elevenlabs/text-to-dialogue-v3",
       "card": "elevenlabs/text-to-dialogue-v3",
       "modality": "audio",
-      "required": []
-    },
-    {
-      "id": "v3-api",
-      "card": "features/v3-api",
-      "modality": "chat",
       "required": []
     },
     {
@@ -403,7 +398,7 @@
     {
       "id": "grok-imagine/extend",
       "card": "grok-imagine",
-      "modality": "chat",
+      "modality": "video",
       "required": ["task_id", "extend_at", "extend_times"]
     },
     {
@@ -433,7 +428,7 @@
     {
       "id": "grok-imagine/upscale",
       "card": "grok-imagine",
-      "modality": "chat",
+      "modality": "image",
       "required": ["task_id"]
     },
     {
@@ -577,7 +572,7 @@
     {
       "id": "infinitalk/from-audio",
       "card": "infinitalk",
-      "modality": "chat",
+      "modality": "video",
       "required": ["image_url", "audio_url"]
     },
     {
@@ -745,25 +740,25 @@
     {
       "id": "omnihuman-1-5",
       "card": "omnihuman-1-5",
-      "modality": "chat",
+      "modality": "video",
       "required": []
     },
     {
       "id": "omnihuman-1-5/human-identification",
       "card": "omnihuman-1-5",
-      "modality": "chat",
+      "modality": "video",
       "required": []
     },
     {
       "id": "omnihuman-1-5/subject-detection",
       "card": "omnihuman-1-5",
-      "modality": "chat",
+      "modality": "video",
       "required": []
     },
     {
       "id": "pixverse-v6/extend",
       "card": "pixverse-v6",
-      "modality": "chat",
+      "modality": "video",
       "required": []
     },
     {
@@ -787,7 +782,7 @@
     {
       "id": "pixverse-v6/transition",
       "card": "pixverse-v6",
-      "modality": "chat",
+      "modality": "video",
       "required": []
     },
     {
@@ -855,12 +850,6 @@
       "card": "recraft-remove-background",
       "modality": "image",
       "required": ["image"]
-    },
-    {
-      "id": "runway",
-      "card": "runway-api",
-      "modality": "chat",
-      "required": []
     },
     {
       "id": "runway/extend-ai-video",
@@ -1153,7 +1142,7 @@
     {
       "id": "wan/2-7-r2v",
       "card": "wan-2-7-video",
-      "modality": "chat",
+      "modality": "video",
       "required": []
     },
     {
@@ -1165,19 +1154,19 @@
     {
       "id": "wan/2-7-videoedit",
       "card": "wan-2-7-video",
-      "modality": "chat",
+      "modality": "video",
       "required": []
     },
     {
       "id": "wan/2-2-animate-move",
       "card": "wan-animate",
-      "modality": "chat",
+      "modality": "video",
       "required": ["video_url", "image_url"]
     },
     {
       "id": "wan/2-2-animate-replace",
       "card": "wan-animate",
-      "modality": "chat",
+      "modality": "video",
       "required": ["video_url", "image_url"]
     },
     {
