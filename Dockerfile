@@ -154,7 +154,16 @@ ENV OMNIROUTE_MITM_STUB=1
 # child (build-next-isolated.mjs → resolveNextBuildEnv spreads process.env).
 # Build-only; the runtime heap is set separately on the runner stage
 # (OMNIROUTE_MEMORY_MB). Override: `--build-arg OMNIROUTE_BUILD_MEMORY_MB=6144`.
-ARG OMNIROUTE_BUILD_MEMORY_MB=4096
+#
+# Default is 8192, not 4096: on the webpack path (OMNIROUTE_USE_TURBOPACK=0)
+# the production optimization pass runs the heap all the way to a 4096 ceiling
+# and V8 aborts with "Ineffective mark-compacts near heap limit" (measured
+# 2026-08: heap peaked at the 4.1 GB cap ~200 min into an emulated amd64
+# build). Upstream CI never hits this because it builds with Turbopack, whose
+# compile lives in native Rust memory that this ceiling does not bound — so
+# webpack, the documented fallback for memory-constrained hosts (#6409), was
+# the one path the old default made impossible to finish.
+ARG OMNIROUTE_BUILD_MEMORY_MB=8192
 ENV NODE_OPTIONS="--max-old-space-size=${OMNIROUTE_BUILD_MEMORY_MB}"
 
 COPY . ./
