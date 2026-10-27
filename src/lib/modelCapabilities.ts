@@ -95,6 +95,8 @@ const MAX_TOKENS_UNSUPPORTED_PATTERNS = [
   "o3",
   "gpt-5.4",
   "gpt-5.5",
+  "gpt-5.6",
+  "gpt-6",
 ];
 
 type CapabilityInput =
